@@ -4,4 +4,4 @@ const fs = require('fs');
 
 const DESTINATION = path.join(__dirname, '..', 'out', 'CNAME');
 
-fs.writeFileSync(DESTINATION, 'kirisu.co.uk');
+fs.writeFileSync(DESTINATION, 'www.kirisu.co.uk');
