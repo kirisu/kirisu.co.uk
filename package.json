@@ -1,0 +1,21 @@
+{
+  "name": "kirisu.github.io",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "preexport": "next build",
+    "export": "next export",
+    "postexport": "./bin/buildSitemap.js && ./bin/writeCNAME.js && ./bin/deploy"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^0.1.2",
+    "bulma": "^0.7.1",
+    "next": "^6.0.0",
+    "node-sass": "^4.9.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "webpack": "^3.10.0"
+  }
+}
