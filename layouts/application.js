@@ -9,7 +9,12 @@ export default ({ children, title = '' }) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link
+        rel="stylesheet"
+        href="//cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css"
+      />
     </Head>
     {children}
+    <div id="root-modal" />
   </>
 );
