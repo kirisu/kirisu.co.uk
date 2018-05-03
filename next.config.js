@@ -2,7 +2,7 @@ var webpack = require('webpack');
 const withSass = require('@zeit/next-sass');
 
 const ASSET_PREFIX =
-  process.env.NODE_ENV === 'production' ? 'https://www.kirisu.co.uk' : '';
+  process.env.NODE_ENV === 'production' ? '//www.kirisu.co.uk' : '';
 
 module.exports = withSass({
   exportPathMap: () => ({
