@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 
-export default class RingingBell extends PureComponent {
+export default class RingingBell extends Component {
   state = {
     angles: [0, 315, 0, 45]
   };
