@@ -1,7 +1,7 @@
 import { PureComponent } from 'react';
 
 export default class RingingBell extends PureComponent {
-  static async getIntialProps() {
+  static async getInitialProps() {
     return {
       angles: [0, 315, 0, 45]
     };
