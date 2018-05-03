@@ -1,11 +1,11 @@
-import { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class RingingBell extends Component {
+export default class RingingBell extends PureComponent {
   state = {
     angles: [0, 315, 0, 45]
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.timer = setTimeout(() => {
       this.setState({
         angles: [
