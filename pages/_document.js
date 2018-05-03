@@ -7,6 +7,11 @@ export default class App extends Document {
       <html>
         <Head>
           <link rel="stylesheet" href="/_next/static/style.css" />
+          <link
+            rel="icon"
+            href="static/assets/favicon.ico"
+            type="image/x-icon"
+          />
         </Head>
         <body>
           <Main />
