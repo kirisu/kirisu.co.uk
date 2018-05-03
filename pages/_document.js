@@ -6,10 +6,13 @@ export default class App extends Document {
     return (
       <html>
         <Head>
-          <link rel="stylesheet" href="/_next/static/style.css" />
+          <link
+            rel="stylesheet"
+            href={`${ASSET_PREFIX}/_next/static/style.css`}
+          />
           <link
             rel="icon"
-            href="static/assets/favicon.ico"
+            href={`${ASSET_PREFIX}/static/assets/favicon.ico`}
             type="image/x-icon"
           />
         </Head>
