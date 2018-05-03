@@ -1,24 +1,16 @@
-import { PureComponent } from 'react';
+import { Component } from 'react';
 
-export default class RingingBell extends PureComponent {
-  // static getIntialProps() {
-  //   return {
-  //     angles: [0, 315, 0, 45]
-  //   };
-  // }
-
+export default class RingingBell extends Component {
   state = {
-    current: 0,
     angles: [0, 315, 0, 45]
   };
 
   componentWillMount() {
     this.timer = setTimeout(() => {
       this.setState({
-        current: this.state.angles.slice(0, 1),
         angles: [
           ...this.state.angles.slice(1, this.state.angles.length),
-          ...this.state.angles.slice(0, 1)
+          this.state.angles[0]
         ]
       });
       this.componentWillMount();
@@ -34,7 +26,7 @@ export default class RingingBell extends PureComponent {
       <span className="icon">
         <i
           className={`mdi mdi-bell-ring-outline mdi-rotate-${
-            this.state.current
+            this.state.angles[0]
           }`}
         />
       </span>
