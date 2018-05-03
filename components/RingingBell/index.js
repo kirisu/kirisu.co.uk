@@ -13,7 +13,7 @@ export default class RingingBell extends Component {
           this.state.angles[0]
         ]
       });
-    }, Math.floor(Date.now() / 1000) * 1000 + 1000 - Date.now());
+    }, 1000);
   }
 
   componentWillUnmount() {
