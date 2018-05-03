@@ -6,7 +6,7 @@ export default class RingingBell extends Component {
   };
 
   componentDidMount() {
-    this.timer = setTimeout(() => {
+    this.timer = setInterval(() => {
       this.setState({
         angles: [
           ...this.state.angles.slice(1, this.state.angles.length),
