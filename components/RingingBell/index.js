@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class RingingBell extends Component {
+export default class RingingBell extends PureComponent {
   state = {
     angles: [0, 315, 0, 45]
   };
@@ -13,7 +13,6 @@ export default class RingingBell extends Component {
           this.state.angles[0]
         ]
       });
-      this.componentWillMount();
     }, Math.floor(Date.now() / 1000) * 1000 + 1000 - Date.now());
   }
 
