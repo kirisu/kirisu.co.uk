@@ -5,15 +5,20 @@ export default class RingingBell extends Component {
     angles: [0, 315, 0, 45]
   };
 
-  componentDidMount() {
-    this.timer = setInterval(() => {
+  tick = () => {
+    this.timer = setTimeout(() => {
       this.setState({
         angles: [
           ...this.state.angles.slice(1, this.state.angles.length),
           this.state.angles[0]
         ]
       });
-    }, 1000);
+      this.tick();
+    }, 500);
+  };
+
+  componentDidMount() {
+    this.tick();
   }
 
   componentWillUnmount() {
