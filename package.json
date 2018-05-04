@@ -7,7 +7,8 @@
     "dev": "next",
     "preexport": "next build",
     "export": "next export",
-    "postexport": "./bin/buildSitemap.js && ./bin/writeCNAME.js"
+    "postexport":
+      "./bin/buildSitemap.js && ./bin/writeCNAME.js && ./bin/writeNoJekyll.js"
   },
   "dependencies": {
     "@zeit/next-sass": "^0.1.2",
