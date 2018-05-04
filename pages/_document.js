@@ -18,6 +18,7 @@ export default class App extends Document {
         </Head>
         <body>
           <Main />
+          <div id="root-modal" />
           <NextScript />
         </body>
       </html>
