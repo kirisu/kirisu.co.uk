@@ -4,7 +4,7 @@ export default class Modal extends Component {
   render() {
     return this.props.open ? (
       <div className="modal is-active">
-        <div className="modal-background" />
+        <div className="modal-background" onClick={this.props.onClose} />
         <div role="dialog" className="modal-content">
           {this.props.children}
         </div>

@@ -4,17 +4,17 @@ export default class ContactForm extends Component {
   render() {
     return (
       <div className="card">
-        <div class="card-content">
-          <div class="content">
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label">From</label>
+        <div className="card-content">
+          <div className="content">
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">From</label>
               </div>
-              <div class="field-body">
-                <div class="field">
-                  <p class="control">
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
                     <input
-                      class="input"
+                      className="input"
                       type="email"
                       placeholder="me@example.com"
                     />
@@ -22,21 +22,21 @@ export default class ContactForm extends Component {
                 </div>
               </div>
             </div>
-            <div class="field is-horizontal">
-              <div class="field-label is-normal">
-                <label class="label">Message</label>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Message</label>
               </div>
-              <div class="field-body">
-                <div class="field">
-                  <p class="control">
-                    <textarea class="textarea" />
+              <div className="field-body">
+                <div className="field">
+                  <p className="control">
+                    <textarea className="textarea" />
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <footer class="card-footer" />
+        <footer className="card-footer" />
       </div>
     );
   }
