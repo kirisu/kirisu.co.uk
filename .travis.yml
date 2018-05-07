@@ -4,11 +4,15 @@ install:
   - yarn
 script:
   - yarn export
+after_success:
+  - echo '' > $BUILD_FOLDER/.nojekyll
+  - echo $CNAME > $BUILD_FOLDER/CNAME
+  - ./bin/buildSitemap.js
 deploy:
   provider: pages
   skip_cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: out
+  local-dir: $BUILD_FOLDER
   keep-history: true
   on:
     branch: master

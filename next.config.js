@@ -1,18 +1,17 @@
 var webpack = require('webpack');
 const withSass = require('@zeit/next-sass');
 
-const ASSET_PREFIX =
-  process.env.NODE_ENV === 'production' ? '//www.kirisu.co.uk' : '';
+const SITE_ROOT = process.env.SITE_ROOT || '';
 
 module.exports = withSass({
   exportPathMap: () => ({
     '/': { page: '/' }
   }),
-  assetPrefix: ASSET_PREFIX,
+  assetPrefix: SITE_ROOT,
   webpack: (config, { dev }) => {
     config.plugins.push(
       new webpack.DefinePlugin({
-        ASSET_PREFIX: JSON.stringify(ASSET_PREFIX)
+        SITE_ROOT: JSON.stringify(SITE_ROOT)
       })
     );
 
