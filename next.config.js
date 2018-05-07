@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 const withSass = require('@zeit/next-sass');
 
-const ASSET_PREFIX =
-  process.env.NODE_ENV === 'production' ? '//www.kirisu.co.uk' : '';
+const SITE_ROOT =
+  process.env.NODE_ENV === 'production' ? process.env.SITE_ROOT : '';
 
 module.exports = withSass({
   exportPathMap: () => ({
@@ -12,7 +12,7 @@ module.exports = withSass({
   webpack: (config, { dev }) => {
     config.plugins.push(
       new webpack.DefinePlugin({
-        ASSET_PREFIX: JSON.stringify(ASSET_PREFIX)
+        ASSET_PREFIX: JSON.stringify(SITE_ROOT)
       })
     );
 

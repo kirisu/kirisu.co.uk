@@ -5,7 +5,7 @@ const path = require('path');
 const glob = require('glob');
 const fs = require('fs');
 
-const SITE_ROOT = 'https://www.kirisu.co.uk';
+const SITE_ROOT = process.env.SITE_ROOT || '';
 const SOURCE = path.join(__dirname, '..', 'pages', '/**/!(_)*.js');
 const DESTINATION = path.join(__dirname, '..', 'out', 'sitemap.xml');
 
