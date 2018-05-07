@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "export": "next build && next export -o process.env.BUILD_FOLDER"
+    "export": "next build && next export"
   },
   "dependencies": {
     "@zeit/next-sass": "^0.1.2",
