@@ -3,7 +3,7 @@ language: node_js
 install:
   - yarn
 script:
-  - yarn export
+  - BUILD_FOLDER=$BUILD_FOLDER yarn export
 after_success:
   - echo '' > $BUILD_FOLDER/.nojekyll
   - echo $CNAME > $BUILD_FOLDER/CNAME
