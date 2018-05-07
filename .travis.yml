@@ -4,6 +4,9 @@ install:
   - yarn
 script:
   - yarn export
+after_script:
+  - echo '' > out/.nojekyll
+  - echo $CNAME > out/CNAME
 deploy:
   provider: pages
   skip_cleanup: true
