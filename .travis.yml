@@ -4,7 +4,7 @@ install:
   - yarn
 script:
   - yarn export
-after_script:
+after_success:
   - echo '' > out/.nojekyll
   - echo $CNAME > out/CNAME
 deploy:
