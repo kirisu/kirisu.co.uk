@@ -4,10 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "preexport": "next build",
-    "export": "next export",
-    "postexport": "./bin/buildSitemap.js"
+    "dev": "next"
   },
   "dependencies": {
     "@zeit/next-sass": "^0.1.2",

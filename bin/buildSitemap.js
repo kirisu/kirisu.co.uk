@@ -6,8 +6,10 @@ const glob = require('glob');
 const fs = require('fs');
 
 const SITE_ROOT = process.env.SITE_ROOT || '';
+const BUILD_FOLDER = process.env.BUILD_FOLDER || 'out';
+
 const SOURCE = path.join(__dirname, '..', 'pages', '/**/!(_)*.js');
-const DESTINATION = path.join(__dirname, '..', 'out', 'sitemap.xml');
+const DESTINATION = path.join(__dirname, '..', BUILD_FOLDER, 'sitemap.xml');
 
 let diskPages = glob.sync(SOURCE);
 
