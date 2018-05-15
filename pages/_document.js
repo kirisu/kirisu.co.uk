@@ -1,4 +1,3 @@
-// ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document';
 
 const FAVICON_URL = `${SITE_ROOT}/static/assets/favicon.ico`;
