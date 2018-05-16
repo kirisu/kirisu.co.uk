@@ -9,10 +9,12 @@ export default class RingingBell extends Component {
   state = {
     angles: [0, 315, 0, 45],
     then: INITIAL_NOW,
-    now: INITIAL_NOW
+    now: INITIAL_NOW,
+    timer: null
   };
 
   tick = () => {
+    cancelAnimationFrame(this.timer);
     const timer = requestAnimationFrame(this.tick);
     const now = Date.now();
 
@@ -35,7 +37,7 @@ export default class RingingBell extends Component {
   }
 
   componentWillUnmount() {
-    clearAnimationFrame(this.state.timer);
+    cancelAnimationFrame(this.state.timer);
   }
 
   render() {
