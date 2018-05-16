@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "export": "next build && next export -o $BUILD_FOLDER"
+    "export": "next build && next export -o $BUILD_FOLDER",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",
@@ -15,5 +17,16 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "deep-freeze": "^0.0.1",
+    "jest": "^22.4.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest"
+    },
+    "testEnvironment": "node"
   }
 }

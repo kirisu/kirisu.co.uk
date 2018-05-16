@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
 
+import moveArrayItemFirstToLast from '../../helpers/moveArrayItemFirstToLast';
+
+const INTERVAL = 250;
+const INITIAL_NOW = Date.now();
+
 export default class RingingBell extends Component {
   state = {
-    angles: [0, 315, 0, 45]
+    angles: [0, 315, 0, 45],
+    then: INITIAL_NOW,
+    now: INITIAL_NOW
   };
 
   tick = () => {
-    this.timer = setTimeout(() => {
+    const timer = requestAnimationFrame(this.tick);
+    const now = Date.now();
+
+    this.setState({
+      timer,
+      now,
+      delta: now - this.state.then
+    });
+
+    if (this.state.delta > INTERVAL) {
       this.setState({
-        angles: [
-          ...this.state.angles.slice(1, this.state.angles.length),
-          this.state.angles[0]
-        ]
+        then: this.state.now - this.state.delta % INTERVAL,
+        angles: moveArrayItemFirstToLast(this.state.angles)
       });
-      this.tick();
-    }, 500);
+    }
   };
 
   componentDidMount() {
@@ -22,7 +35,7 @@ export default class RingingBell extends Component {
   }
 
   componentWillUnmount() {
-    clearTimeout(this.timer);
+    clearAnimationFrame(this.state.timer);
   }
 
   render() {
