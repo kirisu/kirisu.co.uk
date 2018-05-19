@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 
-const FAVICON_URL = `${SITE_ROOT}/static/assets/favicon.ico`;
-const APP_CSS_URL = `${SITE_ROOT}/_next/static/style.css`;
+const FAVICON_URL = '/static/assets/favicon.ico';
+const APP_CSS_URL = '/_next/static/style.css';
 const MDI_CSS_URL =
   '//cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css';
 

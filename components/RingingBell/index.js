@@ -1,33 +1,26 @@
 import React, { Component } from 'react';
 
-import moveArrayItemFirstToLast from '../../helpers/moveArrayItemFirstToLast';
-
-const INTERVAL = 250;
+const FPS = 30;
+const INTERVAL = 1000 / FPS;
 const INITIAL_NOW = Date.now();
+const ANGLES = [0, 315, 0, 45];
 
 export default class RingingBell extends Component {
   state = {
-    angles: [0, 315, 0, 45],
-    then: INITIAL_NOW,
-    now: INITIAL_NOW,
-    timer: null
+    angle: ANGLES[0],
+    then: INITIAL_NOW
   };
 
   tick = () => {
     cancelAnimationFrame(this.timer);
-    const timer = requestAnimationFrame(this.tick);
+    this.timer = requestAnimationFrame(this.tick);
     const now = Date.now();
+    const delta = now - this.state.then;
 
-    this.setState({
-      timer,
-      now,
-      delta: now - this.state.then
-    });
-
-    if (this.state.delta > INTERVAL) {
+    if (delta > INTERVAL) {
       this.setState({
-        then: this.state.now - this.state.delta % INTERVAL,
-        angles: moveArrayItemFirstToLast(this.state.angles)
+        angle: ANGLES[parseInt((this.state.then - INITIAL_NOW) / 500) % 4],
+        then: now - delta % INTERVAL
       });
     }
   };
@@ -37,16 +30,14 @@ export default class RingingBell extends Component {
   }
 
   componentWillUnmount() {
-    cancelAnimationFrame(this.state.timer);
+    cancelAnimationFrame(this.timer);
   }
 
   render() {
     return (
       <span className="icon">
         <i
-          className={`mdi mdi-bell-ring-outline mdi-rotate-${
-            this.state.angles[0]
-          }`}
+          className={`mdi mdi-bell-ring-outline mdi-rotate-${this.state.angle}`}
         />
       </span>
     );
