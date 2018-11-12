@@ -1,0 +1,19 @@
+version: "2"
+services:
+  kirisu:
+    container_name: kirisu
+    build: .
+    environment: 
+      - NODE_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./package.json:/opt/app/package.json
+      - ./package-lock.json:/opt/app/package-lock.json
+      - ./.babelrc:/opt/app/.babelrc
+      - ./next.config.js:/opt/app/next.config.js
+      - ./components:/opt/app/components
+      - ./helpers:/opt/app/helpers
+      - ./layouts:/opt/app/layouts
+      - ./pages:/opt/app/pages
+      - ./static:/opt/app/static
