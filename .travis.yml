@@ -2,7 +2,7 @@ language: node_js
 before_script:
   - npm test
 script:
-  - npm export
+  - npm run export
 after_success:
   - echo '' > $BUILD_FOLDER/.nojekyll
   - echo $CNAME > $BUILD_FOLDER/CNAME
