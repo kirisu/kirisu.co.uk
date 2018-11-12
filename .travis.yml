@@ -1,11 +1,10 @@
 language: node_js
-  - "lts/*"
 install:
-  - yarn
+  - npm
 before_script:
-  - yarn test
+  - npm test
 script:
-  - yarn export
+  - npm export
 after_success:
   - echo '' > $BUILD_FOLDER/.nojekyll
   - echo $CNAME > $BUILD_FOLDER/CNAME
